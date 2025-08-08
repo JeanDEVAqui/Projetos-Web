@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio - Jean Gabriel</title>
+    <style>
+        :root {
+            --primary: #4e73df;
+            --secondary: #1cc88a;
+            --bg: #f8f9fc;
+            --text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .sobre {
+            text-align: center;
+        }
+
+        .projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jean Gabriel</h1>
+        <p>Desenvolvedor Full Stack | Aspirante a Engenheiro de Software</p>
+    </header>
+
+    <section class="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Sou Técnico em Informática e estudante de Engenharia da Computação, apaixonado por tecnologia e criação de sistemas que geram impacto real.</p>
+    </section>
+
+    <section>
+        <h2>Meus Projetos WEB</h2>
+        <div class="projetos">
+            <div class="card">
+                <h3>Calculadora</h3>
+                <p>Calculadora simples e funcional desenvolvida em HTML, CSS e JavaScript.</p>
+                <a href="Calculadora/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Palavra do Dia</h3>
+                <p>App que exibe uma nova palavra diariamente com definição e exemplo.</p>
+                <a href="Palavra-do-dia/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Site Cursos TI UNIVESP</h3>
+                <p>Portal com informações sobre cursos de tecnologia da UNIVESP.</p>
+                <a href="Site-Cursos/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Sorteador de Número</h3>
+                <p>Ferramenta para gerar números aleatórios com intervalos personalizados.</p>
+                <a href="Sorteador-de-numero/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Teste Guide Imóvel</h3>
+                <p>Protótipo de sistema para avaliação e exibição de imóveis.</p>
+                <a href="Teste-guide-imovel/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Conversor de Moedas</h3>
+                <p>Conversor em tempo real entre diferentes moedas usando API.</p>
+                <a href="Jogos/ConversorMoeda/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Heróis vs Vilões</h3>
+                <p>Jogo interativo baseado em batalhas entre personagens fictícios.</p>
+                <a href="Jogos/HeroisEViloes/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Jogo do Vidro - Round 6</h3>
+                <p>Mini game inspirado na série Round 6, com desafio de escolhas.</p>
+                <a href="Jogos/JogoDoVidroR6/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Pedra, Papel e Tesoura</h3>
+                <p>Versão digital do clássico jogo, com placar e IA simples.</p>
+                <a href="Jogos/PedraPapelTesoura/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Quiz</h3>
+                <p>Quiz interativo com pontuação e feedback em tempo real.</p>
+                <a href="Jogos/Quiz/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+            <div class="card">
+                <h3>Jogo da Velha</h3>
+                <p>Jogo da velha com inteligência artificial usando algoritmo Minimax.</p>
+                <a href="Jogos/velha/index.html" target="_blank" rel="noopener">Ver projeto</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>📧 <a href="mailto:jeangabrielpta2015@gmail.com">jeangabrielpta2015@gmail.com</a></p>
+        <p>© 2025 Jean Gabriel - Portfólio</p>
+    </footer>
+
+</body>
+</html>

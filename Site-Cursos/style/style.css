@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*root é uma sub classe que vamos adicionar variáveis que vamos puxar para os estilos do css.
+* é usado para dar uma configuração global para não precisar fazer a seleção manual
+*/
+:root{
+    --cor0: #c5dbd6;
+    --cor1: #83E1AD;
+    --cor2: #3DDC84;
+    --cor3: #2FA866;
+    --cor4: #1A5C37;
+    --cor5: #063d1e;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte2: 'Android', sans-serif;
+    --fonte-padrao: Arial, Verdana, Sans-serif;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor0);
+}
+p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.5em;
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+header > h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.548);
+}
+header > p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 500px;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.548);
+
+}
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.479);
+    text-align: center;
+}
+nav > a{
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.4;
+    position: relative;
+    margin-bottom: 50px;
+    min-width: 150px;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2),  
+                 3px 0 5px rgba(0, 0, 0, 0.2);
+}
+nav > a:hover{
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+main{
+    max-width: 800px;
+    min-width: 250px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.658);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor3);
+}
+main h1{
+    color: var(--cor5);
+    font-family: var(--fonte2);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+}
+main strong{
+    color: var(--cor4);
+    font-weight: bolder;
+    padding: 2px 6px;
+}
+div.video{
+    background-color: var(--cor3);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 57.5%;
+    position: relative;
+}
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+img{
+    width: 80%;
+    display: block;
+    margin: 10px auto 0;
+}
+#tiimage{
+    margin-left: -30px;
+}
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.349);
+}
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    font-size: 0.8;
+    text-align: center;
+    padding: 5px;
+    
+}
+footer a{
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+}
+/*footer p{
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+}*/
+footer ul{
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* 2 colunas */
+    gap: 10px;
+    padding: 0;
+    justify-content: center;
+}
+li {
+    break-inside: avoid; /* Evita quebra de item entre colunas */
+    display: inline-block;
+}
+footer p#criador{
+    color: white;
+    font-weight: bolder;
+    text-align:left;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}

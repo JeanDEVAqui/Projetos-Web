@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jogo da Velha</title>
+<link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+<div class="container">
+ <div class="containt">
+        <h1>Jogo da Velha</h1>
+        <label for="mode">Modo de Jogo:</label>
+      <select id="mode" onchange="resetGame()">
+      <option value="pvp">Jogador vs Jogador</option>
+      <option value="bot">Jogador vs Máquina</option>
+      </select>
+      
+      <label for="difficulty">Dificuldade:</label>
+      <select id="difficulty" onchange="resetGame()">
+      <option value="easy">Fácil</option>
+      <option value="medium">Médio</option>
+      <option value="hard">Difícil</option>
+      </select>
+        <div class="board" id="board">
+          <!-- Células serão geradas pelo JS -->
+        </div>
+        <div id="message" class="message"></div>
+        <button onclick="resetGame()">Reiniciar</button>
+      </div>
+  </div>
+
+  <script src="script/script.js"></script>
+</body>
+</html>

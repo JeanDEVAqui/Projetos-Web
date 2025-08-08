@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imóvel Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <img src="img/logo.png" alt="logo Imóvel Guide" class="logo" />
+    <nav>
+      <ul class="menu-esquerda">
+        <li><a href="#">Condomínios</a></li>
+        <li><a href="#">Fórum</a></li>
+        <li><a href="#">Artigos</a></li>
+        <li><a href="#">Cotar Imóvel</a></li>
+        <li><a href="#">Planos</a></li>
+        <li><a href="#">Entrar</a></li>
+        <li><button class="button" id="cadastrar">Cadastrar-se</button></li>
+      </ul>
+    </nav>
+    <div class="hamburguer" id="hamburguer" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="card">
+      <img src="img/corretora.jpg" alt="Corretora">
+      <p>Nome Corretora</p>
+      <button class="button" onclick="verTelefone(this)">Ver Telefone</button>
+    </div>
+
+    <div class="form-box">
+      <h3>Mande uma mensagem:</h3>
+      <input type="text" id="cpf" maxlength="14" placeholder="Digite seu CPF"><br>
+      <input type="text" id="telefone" placeholder="Digite seu telefone"><br>
+      <input type="text" id="assunto" placeholder="Digite o assunto"><br>
+      <button class="button" onclick="enviarMensagem()">Enviar Mensagem</button>
+    </div>
+
+    <div class="rule3">
+      <h3>Regra de 3</h3>
+      <input type="number" id="a" placeholder="60">
+      <input type="number" id="b" placeholder="100"><br>
+      <input type="number" id="c" placeholder="30">
+      <div id="resultado">Resultado</div><br>
+      <button class="button" onclick="calcularRegra3()">Calcular</button>
+    </div>
+
+    <div class="img-box" id="box-img">
+      <img id="img1" src="img/casa.jpg" alt="Casa">
+      <button class="button" onclick="abrirModal()">Abrir imagem no modal</button>
+    </div>
+
+    <div class="img-box" id="printable">
+      <img src="img/casa.jpg" alt="Casa">
+      <div class="imovel-guide">Imovel Guide</div>
+      <button type="button" class="button" id="downloadButton">Download</button>
+    </div>
+
+    <div class="zoom-anim-box">
+      <img src="img/casa.jpg" alt="Casa Zoom" class="zoom-anim-img">
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="fecharModal()">&times;</span>
+      <img src="img/casa.jpg" alt="Imagem Modal">
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <p><a href="#" style="color:white;">Termos</a> | <a href="#" style="color:white;">Contato</a> | <a href="#" style="color:white;">Sobre</a></p>
+    </div>
+    <div>
+      <p>&copy; 2022.Todos os direitos reservados. <img src="img/logo.png" alt="logo"></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

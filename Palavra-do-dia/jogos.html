@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogos Católicos</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #336699;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1, h2 {
+      color: #336699;
+      text-align: center;
+    }
+
+    .game {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #336699;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button.correct {
+      background-color: #28a745;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .word-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 30px);
+      gap: 2px;
+      justify-content: center;
+      margin-top: 10px;
+      user-select: none;
+    }
+
+    .cell {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e0f0ff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .selected {
+      background-color: yellow;
+    }
+
+    .found {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .error {
+      animation: blinkRed 0.5s 2;
+    }
+
+    @keyframes blinkRed {
+      0%, 100% { background-color: #e0f0ff; }
+      50% { background-color: red; }
+    }
+
+
+
+    
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #336699;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .game {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #336699;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button.correct {
+      background-color: #28a745;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .word-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 30px);
+      gap: 2px;
+      justify-content: center;
+      margin-top: 10px;
+      user-select: none;
+    }
+
+    .cell {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e0f0ff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .selected {
+      background-color: yellow;
+    }
+
+    .found {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .error {
+      animation: blinkRed 0.5s 2;
+    }
+
+    @keyframes blinkRed {
+      0%, 100% { background-color: #e0f0ff; }
+      50% { background-color: red; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Palavra do Dia</h1>
+    <nav>
+      <a href="index.html">Palavra do Dia</a>
+      <a href="faq.html">Perguntas Frequentes</a>
+      <a href="oracoes.html">Orações</a>
+      <a href="jogos.html">Jogos</a>
+    </nav>
+  </header>
+
+  <h1>Jogos Católicos</h1>
+
+  <div class="game" id="quizGame">
+    <h2>Quiz Bíblico</h2>
+    <p id="question">Carregando pergunta...</p>
+    <div id="options"></div>
+    <div id="quizFeedback" class="feedback"></div>
+    <button id="nextBtn" onclick="nextQuestion()">Próxima Pergunta</button>
+  </div>
+
+
+  <div class="game" id="battleGame">
+    <h2>Batalha Espiritual</h2>
+    <p id="battleQuestion">Carregando batalha...</p>
+    <div id="battleOptions"></div>
+    <div id="battleFeedback" class="feedback"></div>
+    <button id="battleNextBtn" onclick="nextBattle()">Próxima Batalha</button>
+  </div>
+
+  <script>
+    const quizQuestions = [
+  { question: 'Quem foi o primeiro homem criado por Deus?', options: ['Moisés', 'Adão', 'Abraão', 'Pedro'], answer: 'Adão' },
+  { question: 'Qual o nome da mãe de Jesus?', options: ['Maria', 'Isabel', 'Marta', 'Sara'], answer: 'Maria' },
+  { question: 'Quantos livros tem a Bíblia Católica?', options: ['66', '70', '73', '75'], answer: '73' },
+  { question: 'Qual foi o apóstolo que traiu Jesus?', options: ['Pedro', 'Tiago', 'Judas Iscariotes', 'João'], answer: 'Judas Iscariotes' },
+  { question: 'Quem guiou o povo de Israel na travessia do Mar Vermelho?', options: ['Josué', 'Moisés', 'Abraão', 'Davi'], answer: 'Moisés' },
+  { question: 'Qual o primeiro livro da Bíblia?', options: ['Êxodo', 'Gênesis', 'Salmos', 'Levítico'], answer: 'Gênesis' },
+  { question: 'Quem foi lançado na cova dos leões?', options: ['Elias', 'Daniel', 'Ezequiel', 'Samuel'], answer: 'Daniel' },
+  { question: 'Quem é conhecido como o "pai da fé"?', options: ['Moisés', 'Isaac', 'Abraão', 'Jacó'], answer: 'Abraão' },
+  { question: 'Quantos mandamentos Deus deu a Moisés?', options: ['5', '7', '10', '12'], answer: '10' },
+  { question: 'Qual apóstolo foi escolhido para substituir Judas?', options: ['Matias', 'Paulo', 'Lucas', 'Estevão'], answer: 'Matias' },
+  { question: 'Qual é o menor versículo da Bíblia?', options: ['Jesus chorou.', 'Deus é amor.', 'Orai sem cessar.', 'Amarás ao teu próximo.'], answer: 'Jesus chorou.' },
+  { question: 'Quem construiu a arca?', options: ['Abraão', 'Elias', 'Noé', 'Salomão'], answer: 'Noé' },
+  { question: 'Quem batizou Jesus?', options: ['Pedro', 'João Batista', 'Tiago', 'André'], answer: 'João Batista' },
+  { question: 'Em qual monte Jesus foi crucificado?', options: ['Sinai', 'Carmelo', 'Calvário', 'Tabor'], answer: 'Calvário' },
+  { question: 'Quantos dias Jesus ficou no deserto?', options: ['20', '30', '40', '50'], answer: '40' },
+  { question: 'Qual santa é conhecida como "A Pequena Flor de Jesus"?', options: ['Santa Teresa de Calcutá', 'Santa Teresinha do Menino Jesus', 'Santa Clara', 'Santa Rita'], answer: 'Santa Teresinha do Menino Jesus' },
+  { question: 'Qual santo é padroeiro dos pobres e fundador da Ordem Franciscana?', options: ['São Bento', 'Santo Inácio de Loyola', 'São Francisco de Assis', 'São João Bosco'], answer: 'São Francisco de Assis' },
+  { question: 'Qual mártir brasileira foi canonizada em 2017?', options: ['Santa Paulina', 'Santa Dulce dos Pobres', 'Nhá Chica', 'Santa Irmã Dulce'], answer: 'Santa Dulce dos Pobres' },
+
+  // Dogmas e Doutrina
+  { question: 'Qual dogma afirma que Maria foi concebida sem pecado original?', options: ['Assunção', 'Imaculada Conceição', 'Virgindade Perpétua', 'Maternidade Divina'], answer: 'Imaculada Conceição' },
+  { question: 'Qual sacramento apaga o pecado original?', options: ['Crisma', 'Batismo', 'Eucaristia', 'Confissão'], answer: 'Batismo' },
+  { question: 'Qual é a presença real de Jesus na Eucaristia?', options: ['Símbolo', 'Memória', 'Transubstanciação', 'Metáfora'], answer: 'Transubstanciação' },
+
+  // Liturgia e Igreja
+  { question: 'Qual cor litúrgica é usada no tempo do Advento?', options: ['Branco', 'Roxo', 'Verde', 'Vermelho'], answer: 'Roxo' },
+  { question: 'Quantos sacramentos existem na Igreja Católica?', options: ['5', '6', '7', '8'], answer: '7' },
+  { question: 'O que celebra a solenidade de Pentecostes?', options: ['Nascimento de Jesus', 'Ressurreição', 'Vinda do Espírito Santo', 'Ascensão'], answer: 'Vinda do Espírito Santo' },
+
+  // Livros Deuterocanônicos
+  { question: 'Qual livro deuterocanônico fala sobre orações pelos mortos?', options: ['Judite', 'Sabedoria', '2 Macabeus', 'Tobias'], answer: '2 Macabeus' },
+  { question: 'Qual personagem central do livro de Tobias é ajudado pelo anjo Rafael?', options: ['Tobias', 'Sara', 'Raguel', 'Gabael'], answer: 'Tobias' },
+  { question: 'Qual livro traz a história heroica de uma mulher que salva seu povo?', options: ['Rute', 'Judite', 'Ester', 'Débora'], answer: 'Judite' },
+
+];
+
+    let quizIndex = 0;
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+    shuffle(quizQuestions);
+
+    function loadQuestion() {
+      const q = quizQuestions[quizIndex];
+      document.getElementById('question').textContent = q.question;
+      const optionsDiv = document.getElementById('options');
+      optionsDiv.innerHTML = '';
+      document.getElementById('quizFeedback').textContent = '';
+      document.getElementById('nextBtn').classList.remove('correct');
+      q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.textContent = opt;
+        btn.onclick = () => {
+          if (opt === q.answer) {
+            document.getElementById('quizFeedback').textContent = '✅ Resposta correta!';
+            document.getElementById('nextBtn').classList.add('correct');
+          } else {
+            document.getElementById('quizFeedback').textContent = '❌ Resposta incorreta. Tente novamente!';
+          }
+        }
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    function nextQuestion() {
+      quizIndex = (quizIndex + 1) % quizQuestions.length;
+      loadQuestion();
+    }
+    loadQuestion();
+
+
+
+    const battleQuestions = [
+      { question: 'Qual é a armadura de Deus segundo Efésios 6?', options: ['Capacete da esperança', 'Espada do Espírito', 'Escudo da fé', 'Todos os itens anteriores'], answer: 'Todos os itens anteriores' },
+      { question: 'Quem é o nosso adversário espiritual?', options: ['Carne', 'Mundo', 'Demônio', 'Todos eles'], answer: 'Todos eles' },
+      { question: 'Quem libertou o povo hebreu do Egito?', options: ['Josué', 'Moisés', 'Abraão', 'Davi'], answer: 'Moisés' },
+      { question: 'Qual sacramento nos reconcilia com Deus após o pecado?', options: ['Crisma', 'Batismo', 'Confissão', 'Unção dos Enfermos'], answer: 'Confissão' },
+      { question: 'Qual é o sacramento da maturidade cristã?', options: ['Eucaristia', 'Crisma', 'Batismo', 'Ordem'], answer: 'Crisma' },
+      { question: 'Qual a principal oração ensinada por Jesus?', options: ['Ave Maria', 'Glória ao Pai', 'Pai Nosso', 'Creio'], answer: 'Pai Nosso' },
+      { question: 'Qual santo combateu heresias com o Rosário?', options: ['São Domingos de Gusmão', 'São Tomás de Aquino', 'São Francisco Xavier', 'São Lourenço'], answer: 'São Domingos de Gusmão' },
+      { question: 'Quem é o sucessor direto de São Pedro?', options: ['O Papa', 'O Bispo de Jerusalém', 'O Arcebispo', 'O Cardeal'], answer: 'O Papa' },
+  { question: 'Qual concílio proclamou o dogma da infalibilidade papal?', options: ['Concílio de Trento', 'Concílio Vaticano I', 'Concílio Vaticano II', 'Concílio de Niceia'], answer: 'Concílio Vaticano I' },
+  { question: 'O que é a Tradição na Igreja Católica?', options: ['Costumes populares', 'O que os padres dizem', 'A transmissão viva do Evangelho', 'Somente os documentos papais'], answer: 'A transmissão viva do Evangelho' },
+
+    ];
+    shuffle(battleQuestions);
+    let battleIndex = 0;
+
+    function loadBattle() {
+      const q = battleQuestions[battleIndex];
+      document.getElementById('battleQuestion').textContent = q.question;
+      const optionsDiv = document.getElementById('battleOptions');
+      optionsDiv.innerHTML = '';
+      document.getElementById('battleFeedback').textContent = '';
+      document.getElementById('battleNextBtn').classList.remove('correct');
+      q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.textContent = opt;
+        btn.onclick = () => {
+          if (opt === q.answer) {
+            document.getElementById('battleFeedback').textContent = '🛡️ Você venceu essa batalha espiritual!';
+            document.getElementById('battleNextBtn').classList.add('correct');
+          } else {
+            document.getElementById('battleFeedback').textContent = '❌ Derrota! Mas levante-se e tente de novo.';
+          }
+        }
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    function nextBattle() {
+      battleIndex = (battleIndex + 1) % battleQuestions.length;
+      loadBattle();
+    }
+
+    loadBattle();
+  </script>
+</body>
+</html>

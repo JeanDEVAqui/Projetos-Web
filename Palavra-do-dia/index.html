@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Passagens Bíblicas Diárias</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #336699;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    select {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 10px;
+      font-size: 1rem;
+    }
+
+    #days {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .day {
+      background-color: #d0e7f9;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .day:hover {
+      background-color: #a9d6f3;
+    }
+
+    #passage {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    #passage h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Palavra do Dia</h1>
+    <nav>
+      <a href="index.html">Palavra do Dia</a>
+      <a href="faq.html">Perguntas Frequentes</a>
+      <a href="oracoes.html">Orações</a>
+      <a href="jogos.html">Jogos</a>
+    </nav>
+  </header>
+
+  <main>
+    <select id="monthSelector">
+        <option value="">Selecione um mês</option>
+        <option value="january">Janeiro</option>
+        <option value="february">Fevereiro</option>
+        <option value="march">Março</option>
+        <option value="april">Abril</option>
+        <option value="may">Maio</option>
+        <option value="june">Junho</option>
+        <option value="july">Julho</option>
+        <option value="august">Agosto</option>
+        <option value="september">Setembro</option>
+        <option value="october">Outubro</option>
+        <option value="november">Novembro</option>
+        <option value="december">Dezembro</option>
+    </select>
+    </select>
+
+    <div id="days"></div>
+
+    <div id="passage">
+      <h2>Passagem Selecionada</h2>
+      <p><strong>DICAS:</strong></p>
+      <p><strong>1- sempre leia na sua bíblia para melhor contexto e compreensão</strong></p>
+      <p><strong>2-CIC é catecismo da igreja católica</strong></p>
+      <p><strong>Referência:</strong> <span id="passage-reference">Nenhuma</span></p>
+      <p><strong>Texto:</strong> <span id="passage-text">Selecione um dia</span></p>
+      <p><strong>Explicação:</strong> <span id="passage-explanation">—</span></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

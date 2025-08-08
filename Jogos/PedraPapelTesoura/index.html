@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedra Papel e Tesoura</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <img src="img/logo.jpg" alt="Logo" class="logo">
+
+  <div class="container">
+    <div class="content">
+      <h2>Pra ganhar é preciso arriscar!</h2>
+      <p>PEDRA, PAPEL ou TESOURA?</p>
+      
+      <label for="idade">Digite sua idade:</label>
+      <input type="number" id="idade" placeholder="Ex: 18"><br><br>
+
+      <label for="escolha">Escolha sua jogada:</label>
+      <select id="escolha">
+        <option value="1">Pedra</option>
+        <option value="2">Papel</option>
+        <option value="3">Tesoura</option>
+      </select><br><br>
+
+      <button onclick="jogar()">Bora jogar!</button>
+      <div class="resultado">
+        <p id="resultado"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>JeanDevAQUI - 2025</footer>
+  <script src="script/script.js"></script>
+</body>
+</html>
