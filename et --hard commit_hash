@@ -1,0 +1,43 @@
+[33mcommit 76290205426c29d9fc5f1f7e71e22ea48abc870f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/conteudo[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mconteudo[m[33m)[m
+Author: JeanGADev <25206943@aluno.univesp.br>
+Date:   Fri Aug 8 15:40:07 2025 -0300
+
+    teste-mudanca-readMe-em-outra-branch
+
+[33mcommit 8798e19883583652638392693fe8c3200544ccb1[m
+Author: JeanGADev <25206943@aluno.univesp.br>
+Date:   Fri Aug 8 15:32:35 2025 -0300
+
+    update-readMe-link
+    
+    mudança do link do portfólio no readme.md
+
+[33mcommit 6da524aae275786b81027cb8fe9ccf7207cec31b[m
+Author: JeanGADev <25206943@aluno.univesp.br>
+Date:   Fri Aug 8 14:16:17 2025 -0300
+
+    adicao-link-ao-readMe
+    
+    adição do link github pages no readMe
+
+[33mcommit b20891cf6724bcb5c6bf1393842d282991f97483[m
+Author: JeanGADev <25206943@aluno.univesp.br>
+Date:   Fri Aug 8 14:14:45 2025 -0300
+
+    adicao-texto-readMe
+    
+    Explicação de quem eu sou e sobre os projetos
+
+[33mcommit 1801075a32becae8f039a7dd1fd35063bf5e0ed7[m
+Author: JeanGADev <25206943@aluno.univesp.br>
+Date:   Fri Aug 8 14:10:50 2025 -0300
+
+    Adicao-projetos
+    
+    Adicionando os projetos iniciais e o index do portfólio
+
+[33mcommit cad5c8bcd367c0aef17b55e41574d67566758d32[m
+Author: JeanGADev <25206943@aluno.univesp.br>
+Date:   Fri Aug 8 14:05:05 2025 -0300
+
+    Initial commit
