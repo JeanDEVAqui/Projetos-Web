@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+:root {
+    --primary: #4CAF50;
+    --primary-light: #81C784;
+    --accent: #2196F3;
+    --accent-light: #64B5F6;
+    --bg: #f5faff;
+    --text: #333;
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 450px;
+    width: 100%;
+}
+
+#password_img {
+    width: 120px;
+}
+
+#title {
+    color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#password_container {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 12px 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+#password_container.show {
+    display: flex;
+}
+
+#password {
+    font-size: 1.1rem;
+    color: var(--text);
+    flex: 1;
+    margin-right: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#copy {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--accent);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#copy:hover {
+    color: var(--accent-light);
+}
+
+#password_items {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+#size {
+    width: 60px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#generate {
+    background-color: var(--primary);
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#generate:hover {
+    background-color: var(--primary-light);
+}
