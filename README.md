@@ -1,7 +1,7 @@
 # Projetos-Web
 Meus projetos web
 
-https://jeandevjraqui.github.io/Projetos-Web/
+https://jeandevaqui.github.io/Projetos-Web/
 
 Meus Projetos Iniciais
 Bem-vindo(a) ao meu repositório de projetos iniciais! Aqui você encontrará uma coleção de aplicações simples que desenvolvi para aprimorar minhas habilidades em programação e desenvolvimento web.
