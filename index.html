@@ -85,6 +85,48 @@
             color: var(--secondary);
             text-decoration: none;
         }
+
+        #curriculo-btn {
+            cursor: pointer;
+            text-decoration: underline;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        #curriculo-btn:hover {
+            color: #17a673;
+            text-shadow: 0 2px 8px rgba(76,200,138,0.2);
+        }
+
+        #curriculo-btn .icon {
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+        #curriculo-btn.open .icon {
+            transform: rotate(180deg);
+        }
+
+        #curriculo-section {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s cubic-bezier(.4,0,.2,1), opacity 0.4s;
+            max-width: 600px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+        #curriculo-section.open {
+            max-height: 2000px; /* ou use max-height: none; */
+            opacity: 1;
+            transition: max-height 0.7s cubic-bezier(.4,0,.2,1), opacity 0.4s;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +134,55 @@
     <header>
         <h1>Jean Gabriel</h1>
         <p>Desenvolvedor Full Stack | Aspirante a Engenheiro de Software</p>
+        <p id="curriculo-btn">
+            <span class="icon">▼</span>
+            Currículo
+        </p>
     </header>
+
+    <section id="curriculo-section">
+        <h2>Currículo</h2>
+        <p><strong>E-mail:</strong> <a href="mailto:jeangpta@outlook.com">jeangpta@outlook.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/JeanDEVAqui" target="_blank" rel="noopener">JeanDEVAqui</a></p>
+        <br>
+        <h3>Formação</h3>
+        <ul>
+            <li>Engenharia da Computação - UNIVESP (2025 – 2030)</li>
+            <li>Técnico em Informática (Programação) – ETEC Prof. Alfredo de Barros Santos (2017)</li>
+            <li>Ensino Médio – ETEC Prof. Alfredo de Barros Santos (2017)</li>
+            <li>Assistente Administrativo | Extensivo UP Cursos (2020)</li>
+            <li>Direito – UNISAL (2022)</li>
+        </ul>
+        <br>
+        <h3>Experiência</h3>
+        <ul>
+            <li>
+                <strong>Técnico de Informática e Desenvolvedor Assistente</strong> - 2018 a 2020 e 2024 a atualmente<br>
+                Instalação, montagem e manutenção de computadores, desenvolvimento de sistemas web (front-end e back-end), utilizando HTML, CSS, programação com código limpo e banco de dados.
+            </li>
+            <li>
+                <strong>Assistente Jurídico</strong> – 2022 atualmente<br>
+                Revisão de documentos, consultoria de LGPD, orientação contratual, auxílio na elaboração de contratos de trabalho.
+            </li>
+            <li>
+                <strong>Estágio Direito – Vara do Trabalho Guaratinguetá</strong> - 2020 a 2022<br>
+                Atendimento ao público, protocolo de documentos, organização de processos, treinamento de novos estagiários, malote digital e PJE.
+            </li>
+        </ul>
+        <br>
+        <h3>Habilidades</h3>
+        <ul>
+            <li>Linguagens: HTML, CSS, C#, Java, Python, Javascript, React, .NET, PHP</li>
+            <li>Bancos de Dados: PostgreSQL, MongoDB, Firebird</li>
+            <li>Versionamento de código: Git, GitHub</li>
+            <li>Sistemas operacionais: Linux, Windows Server</li>
+            <li>Cloud Computing: Noções de AWS</li>
+            <li>Segurança da Informação: Noções de criptografia, segurança em redes, LGPD</li>
+            <li>Línguas: Inglês e Espanhol</li>
+            <li>UX/UI Design</li>
+            <li>Metodologias Ágeis: Scrum e Kanban</li>
+        </ul>
+    </section>
 
     <section class="sobre">
         <h2>Sobre Mim</h2>
@@ -169,6 +259,17 @@
         <p>📧 <a href="mailto:jeangabrielpta2015@gmail.com">jeangabrielpta2015@gmail.com</a></p>
         <p>© 2025 Jean Gabriel - Portfólio</p>
     </footer>
+
+    <script>
+        // filepath: d:\ESTUDO\1GITHUB\WEB\Projetos-Web\index.html
+        const btn = document.getElementById('curriculo-btn');
+        const sec = document.getElementById('curriculo-section');
+        const icon = btn.querySelector('.icon');
+        btn.addEventListener('click', () => {
+            sec.classList.toggle('open');
+            btn.classList.toggle('open');
+        });
+    </script>
 
 </body>
 </html>
