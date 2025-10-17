@@ -1,0 +1,74 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  padding: 30px;
+  color: #333;
+  background-image: url(./img/back.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app{
+  max-width: 600px;
+  margin: 0 auto 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+h1{
+  text-align: center;
+  color: #333;
+}
+
+h2{
+
+  color: #333;
+  margin-bottom: 10px;
+}
+p{
+  margin: 10px 0;
+  color: #666;  
+}
+
+input{
+  box-sizing: border-box;
+}
+
+button{
+  cursor: pointer;
+  background-color: #333974;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  opacity: 0.9;
+  margin: 3px;
+}
+
+button:hover{
+  background-color: #5555aa;
+  opacity: 1;
+}
+
+.complete{
+  background-color: #4CAF50;
+}
+
+.delete{
+  background-color: #f44336;
+}
+
+todo.form{
+  padding-bottom: 1.5rem;
+}
+
+input, select{
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  width: 100%;
+}
