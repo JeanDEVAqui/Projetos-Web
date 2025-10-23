@@ -11,7 +11,6 @@ const todo = ({ todo }) => {
             <div>
             <button className="complete">Concluir</button>
             <button className="delete">Deletar</button>
-            <p className="pular">-------------------------</p>
             </div>
           </div>  
   )

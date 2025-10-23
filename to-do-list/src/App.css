@@ -12,10 +12,10 @@ body{
 .app{
   max-width: 600px;
   margin: 0 auto 300px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(144, 144, 144, 0.9);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 h1{
   text-align: center;
@@ -29,7 +29,8 @@ h2{
 }
 p{
   margin: 10px 0;
-  color: #666;  
+  color: #3f3f3f;  
+  font-weight: 600;
 }
 
 input{
@@ -46,11 +47,29 @@ button{
   transition: background-color 0.3s;
   opacity: 0.9;
   margin: 3px;
+  margin-right: 5px;
 }
 
 button:hover{
   background-color: #5555aa;
   opacity: 1;
+}
+
+todo-list{
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
+}
+
+.todo{
+  background-color: #dadada;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .complete{
@@ -71,4 +90,19 @@ input, select{
   border: 1px solid #DDD;
   border-radius: 5px;
   width: 100%;
+  
+}
+
+.todo-Form input,
+.todo-Form select {
+  font-weight: 500;  /* deixa o texto mais forte */
+  font-size: 16px;    /* opcional, só pra melhorar a leitura */
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.todo-Form button {
+  font-weight: 500;  /* botão também em negrito */
+  padding: 5px 10px;
+  cursor: pointer;
 }
