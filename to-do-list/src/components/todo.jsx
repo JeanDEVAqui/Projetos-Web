@@ -1,6 +1,6 @@
 import React from 'react'
 
-const todo = ({ todo }) => {
+const todo = ({ todo, removeTodo }) => {
   return (
     <div className="todo">
             <div className="content">
@@ -10,7 +10,7 @@ const todo = ({ todo }) => {
             </div>
             <div>
             <button className="complete">Concluir</button>
-            <button className="delete">Deletar</button>
+            <button className="delete" onClick={() => removeTodo(todo.id)}>Excluir</button>
             </div>
           </div>  
   )
