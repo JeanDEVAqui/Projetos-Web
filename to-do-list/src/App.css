@@ -62,6 +62,7 @@ todo-list{
 }
 
 .todo{
+  margin-top: 10px;
   background-color: #dadada;
   padding: 10px;
   margin-bottom: 10px;
@@ -80,7 +81,7 @@ todo-list{
   background-color: #f44336;
 }
 
-todo.form{
+.todo.form{
   padding-bottom: 1.5rem;
 }
 
@@ -95,14 +96,34 @@ input, select{
 
 .todo-Form input,
 .todo-Form select {
-  font-weight: 500;  /* deixa o texto mais forte */
-  font-size: 16px;    /* opcional, só pra melhorar a leitura */
+  font-weight: 500; 
+  font-size: 16px; 
   padding: 5px;
   margin: 5px 0;
 }
 
 .todo-Form button {
-  font-weight: 500;  /* botão também em negrito */
+  font-weight: 500;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.filter .search{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #555;
+
+}
+
+.filter-options{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 459px) {
+  .filter-options {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
