@@ -2,389 +2,185 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Controle Financeiro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jean Gabriel | Portfólio</title>
 
 <style>
 
-body{
-font-family:Arial;
-background:#f4f6f9;
-padding:20px;
-}
-
-h1{
-margin-bottom:20px;
-}
-
-.container{
-display:grid;
-grid-template-columns:320px 1fr;
-gap:20px;
-}
-
-.box{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-
-input,select{
-width:100%;
-padding:6px;
-margin-top:6px;
-}
-
-button{
-margin-top:10px;
-padding:8px;
-cursor:pointer;
-}
-
-.calendario{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:15px;
-}
-
-.mes{
-background:#eee;
-padding:15px;
-text-align:center;
-border-radius:6px;
-cursor:pointer;
-}
-
-.mes:hover{
-background:#ddd;
-}
-
-.resumo{
-margin-top:15px;
-font-size:18px;
-}
-
-.entrada{
-color:green;
-}
-
-.saida{
-color:red;
-}
-
-ul{
-margin-top:10px;
+*{
+margin:0;
 padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
-li{
-list-style:none;
-display:flex;
-justify-content:space-between;
-margin-bottom:6px;
-}
-
-.delete{
-background:red;
+body{
+background:#0f172a;
 color:white;
-border:none;
-padding:4px 8px;
-border-radius:4px;
 }
 
-.export{
-background:#3498db;
-color:white;
-border:none;
-}
-
-.headerAno{
+header{
 text-align:center;
+padding:40px 20px;
+background:#020617;
+border-bottom:1px solid #1e293b;
+}
+
+header h1{
+font-size:40px;
 margin-bottom:10px;
 }
 
-</style>
+header p{
+color:#94a3b8;
+}
 
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+transition:0.3s;
+border:1px solid #334155;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#38bdf8;
+}
+
+.card h2{
+margin-bottom:10px;
+}
+
+.card p{
+font-size:14px;
+color:#94a3b8;
+margin-bottom:15px;
+}
+
+.card a{
+display:inline-block;
+padding:10px 15px;
+background:#38bdf8;
+color:#020617;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+}
+
+.card a:hover{
+background:#0ea5e9;
+}
+
+footer{
+text-align:center;
+padding:30px;
+margin-top:40px;
+border-top:1px solid #1e293b;
+color:#94a3b8;
+}
+
+</style>
 </head>
+
 
 <body>
 
-<h1>Controle Financeiro</h1>
+<header>
+
+<h1>Jean Gabriel</h1>
+
+<p>Portfólio de Desenvolvimento Web</p>
+
+</header>
+
 
 <div class="container">
 
-<div class="box">
+<div class="grid">
 
-<h3>Adicionar Movimento</h3>
-
-<label>Tipo</label>
-<select id="tipo">
-<option value="entrada">Entrada</option>
-<option value="despesa">Despesa</option>
-</select>
-
-<label>Descrição</label>
-<input id="descricao">
-
-<label>Valor</label>
-<input type="number" id="valor">
-
-<label>Mês inicial</label>
-<input type="month" id="inicio">
-
-<label>Mês final</label>
-<input type="month" id="fim">
-
-<button onclick="adicionar()">Adicionar</button>
-
-<hr>
-
-<h3>Mês selecionado</h3>
-
-<input type="month" id="mesAtual" onchange="atualizar()">
-
-<div class="resumo">
-<div>Entradas: <span class="entrada" id="totalEntradas">0</span></div>
-<div>Despesas: <span class="saida" id="totalDespesas">0</span></div>
-<div>Saldo: <span id="saldo">0</span></div>
+<div class="card">
+<h2>Calculadora</h2>
+<p>Aplicação de calculadora feita com HTML, CSS e JavaScript.</p>
+<a href="Calculadora/index.html">Abrir Projeto</a>
 </div>
 
-<hr>
+<div class="card">
+<h2>Gerador de Senhas</h2>
+<p>Ferramenta para gerar senhas seguras automaticamente.</p>
+<a href="GerarSENHA/index.html">Abrir Projeto</a>
+</div>
 
-<button class="export" onclick="exportar()">Exportar dados</button>
+<div class="card">
+<h2>Jogos</h2>
+<p>Projetos de jogos desenvolvidos em JavaScript.</p>
+<a href="Jogos/index.html">Abrir Projeto</a>
+</div>
 
-<input type="file" onchange="importar(event)">
+<div class="card">
+<h2>Palavra do Dia</h2>
+<p>Sistema que mostra palavras diferentes diariamente.</p>
+<a href="Palavra-do-dia/index.html">Abrir Projeto</a>
+</div>
+
+<div class="card">
+<h2>Portfólio Antigo</h2>
+<p>Versão anterior do meu portfólio.</p>
+<a href="Portifolio/index.html">Abrir Projeto</a>
+</div>
+
+<div class="card">
+<h2>Site de Cursos</h2>
+<p>Projeto de site para divulgação de cursos.</p>
+<a href="Site-Cursos/index.html">Abrir Projeto</a>
+</div>
+
+<div class="card">
+<h2>Sorteador de Número</h2>
+<p>Aplicação para gerar números aleatórios.</p>
+<a href="Sorteador-de-numero/index.html">Abrir Projeto</a>
+</div>
+
+<div class="card">
+<h2>Guide Imóvel</h2>
+<p>Protótipo de sistema para busca de imóveis.</p>
+<a href="Teste-guide-imovel/index.html">Abrir Projeto</a>
+</div>
+
+<div class="card">
+<h2>Controle Financeiro</h2>
+<p>Sistema para gerenciamento de despesas e receitas.</p>
+<a href="controle_financeiro/index.html">Abrir Projeto</a>
+</div>
+
+<div class="card">
+<h2>To Do List</h2>
+<p>Lista de tarefas com armazenamento local.</p>
+<a href="to-do-list/index.html">Abrir Projeto</a>
+</div>
 
 </div>
 
-<div class="box">
-
-<div class="headerAno">
-
-<button onclick="mudarAno(-1)">◀</button>
-<span id="anoAtual"></span>
-<button onclick="mudarAno(1)">▶</button>
-
 </div>
 
-<div class="calendario" id="calendario"></div>
+<footer>
 
-<hr>
+<p>© 2026 - Jean Gabriel | Desenvolvedor Web</p>
 
-<h3>Movimentos do mês</h3>
-
-<ul id="lista"></ul>
-
-</div>
-
-</div>
-
-<script>
-
-let dados=[]
-
-function salvar(){
-localStorage.setItem("financas",JSON.stringify(dados))
-}
-
-function carregar(){
-
-let salvos=localStorage.getItem("financas")
-
-if(salvos){
-dados=JSON.parse(salvos)
-}
-
-}
-
-function adicionar(){
-
-let tipo=document.getElementById("tipo").value
-let descricao=document.getElementById("descricao").value
-let valor=parseFloat(document.getElementById("valor").value)
-let inicio=document.getElementById("inicio").value
-let fim=document.getElementById("fim").value
-
-dados.push({
-id:Date.now(),
-tipo,
-descricao,
-valor,
-inicio,
-fim
-})
-
-salvar()
-atualizar()
-
-}
-
-function deletar(id){
-
-dados=dados.filter(d=>d.id!==id)
-
-salvar()
-atualizar()
-
-}
-
-function mesEntre(mes,inicio,fim){
-
-let m=new Date(mes)
-let i=new Date(inicio)
-let f=new Date(fim)
-
-return m>=i && m<=f
-
-}
-
-function atualizar(){
-
-let mes=document.getElementById("mesAtual").value
-
-let entradas=0
-let despesas=0
-
-let lista=document.getElementById("lista")
-lista.innerHTML=""
-
-dados.forEach(d=>{
-
-if(mesEntre(mes,d.inicio,d.fim)){
-
-let li=document.createElement("li")
-
-li.innerHTML=`
-<span>${d.descricao} - R$${d.valor}</span>
-<button class="delete" onclick="deletar(${d.id})">X</button>
-`
-
-lista.appendChild(li)
-
-if(d.tipo==="entrada"){
-entradas+=d.valor
-}else{
-despesas+=d.valor
-}
-
-}
-
-})
-
-document.getElementById("totalEntradas").innerText=entradas.toFixed(2)
-document.getElementById("totalDespesas").innerText=despesas.toFixed(2)
-document.getElementById("saldo").innerText=(entradas-despesas).toFixed(2)
-
-gerarCalendario()
-
-}
-
-function gerarCalendario(){
-
-let campo=document.getElementById("mesAtual").value
-
-let data=new Date(campo+"-01")
-
-let ano=data.getFullYear()
-
-document.getElementById("anoAtual").innerText=ano
-
-let meses=[
-"Jan","Fev","Mar",
-"Abr","Mai","Jun",
-"Jul","Ago","Set",
-"Out","Nov","Dez"
-]
-
-let cal=document.getElementById("calendario")
-
-cal.innerHTML=""
-
-meses.forEach((nome,index)=>{
-
-let mes=index+1
-
-let box=document.createElement("div")
-
-box.className="mes"
-
-box.innerText=nome
-
-let valor=ano+"-"+String(mes).padStart(2,"0")
-
-box.onclick=()=>{
-
-document.getElementById("mesAtual").value=valor
-atualizar()
-
-}
-
-cal.appendChild(box)
-
-})
-
-}
-
-function mudarAno(valor){
-
-let campo=document.getElementById("mesAtual")
-
-let data=new Date(campo.value+"-01")
-
-data.setFullYear(data.getFullYear()+valor)
-
-campo.value=data.toISOString().slice(0,7)
-
-atualizar()
-
-}
-
-function exportar(){
-
-let dadosStr=JSON.stringify(dados)
-
-let blob=new Blob([dadosStr],{type:"application/json"})
-
-let link=document.createElement("a")
-
-link.href=URL.createObjectURL(blob)
-
-link.download="financas.json"
-
-link.click()
-
-}
-
-function importar(event){
-
-let file=event.target.files[0]
-
-let reader=new FileReader()
-
-reader.onload=function(e){
-
-dados=JSON.parse(e.target.result)
-
-salvar()
-
-atualizar()
-
-}
-
-reader.readAsText(file)
-
-}
-
-carregar()
-
-let hoje=new Date().toISOString().slice(0,7)
-
-document.getElementById("mesAtual").value=hoje
-
-atualizar()
-
-</script>
+</footer>
 
 </body>
 </html>
