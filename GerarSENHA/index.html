@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator - JeanDEVAqui</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div id="container">
+        <img src="src/images/illustration.svg" id="password_img" alt="">
+        <h1 id="title">Gerador de Senhas - JeanDEVAqui</h1>
+
+        <div id="password_container">
+            <span id="password"></span>
+            <button id="copy">
+                <i class="fa-solid fa-copy"></i>
+            </button>
+        </div>
+
+        <div id="password_items">
+            <div class="item">
+                <input id="size" name="size" type="number" min="4" max="128">
+                <label for="size">Comprimento da Senha</label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" id="include_uppercase">
+                <label for="include_uppercase">Incluir Letras Maiúsculas</label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" id="include_lowercase">
+                <label for="include_lowercase">Incluir Letras Minúsculas</label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" id="include_number">
+                <label for="include_number">Incluir Números</label>
+            </div>
+
+            <div class="item">
+                <input type="checkbox" id="include_special_character">
+                <label for="include_special_character">Incluir Caracteres Especiais</label>
+            </div>
+
+            <button id="generate">Gerar Senha</button>
+        </div>
+    </div>
+
+    <!-- Toastify JS -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Script -->
+    <script src="script/script.js"></script>
+</body>
+</html>
